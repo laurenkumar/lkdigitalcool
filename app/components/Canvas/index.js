@@ -125,7 +125,7 @@ export default class Canvas extends EventEmitter {
     this.renderer.initTexture(texture, 0)
 
     const isFirstProject = texture.uid === first(this.data).uid
-    const isNotVisible = this.slug !== 'about' && this.slug !== 'essays' && this.slug !== 'case'
+    const isNotVisible = this.slug !== 'about' && this.slug !== 'essays' && this.slug !== 'case' && this.slug !== 'creation'
 
     if (isFirstProject && isNotVisible) {
       this.createPreloader(texture)

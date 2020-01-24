@@ -150,7 +150,7 @@ export default class extends Mesh {
       this.timelineIn.call(() => {
         this.isAnimating = false
       })
-    } else if (pathname === 'about' || pathname === 'essays') {
+    } else if (pathname === 'about' || pathname === 'essays' || pathname === 'creation') {
       const ease = Power4.easeOut
 
       this.isAnimating = true
@@ -196,7 +196,7 @@ export default class extends Mesh {
   }
 
   hide (isCurrent, pathname, onComplete) {
-    if (pathname === 'about' || pathname === 'essays') {
+    if (pathname === 'about' || pathname === 'essays' || pathname === 'creation') {
       if (isCurrent) {
         return new Promise(resolve => {
           const ease = Power4.easeOut

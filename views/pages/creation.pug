@@ -1,0 +1,75 @@
+extends ../base.pug
+
+include ../utils/mixins.pug
+
+block variables
+  - var slug = 'creation'
+
+block body
+  section.creation(class=`creation--${creation.data.type.toLowerCase()}`)
+
+    .creation__content
+      .creation__content__wrapper
+        section.creation__information
+          .creation__information__columns
+            h1.creation__information__text=creation.data.label
+
+          .creation__information__description!=PrismicDOM.RichText.asHtml(creation.data.intro)
+
+        each item, index in creation.data.body
+          if (item.slice_type === 'image')
+            figure.creation__image(style=`max-width: ${Math.min(item.primary.image.dimensions.width, 1920)}px`)
+              span.creation__image__wrapper(style=`padding-top: ${item.primary.image.dimensions.height / item.primary.image.dimensions.width * 100}%;`)
+                img.creation__image__media(src=item.primary.image.url)
+
+          if (item.slice_type === 'highlight')
+            section.creation__highlight
+              p.creation__highlight__text!=`${item.primary.highlight}&nbsp;`
+
+          if (item.slice_type === 'text')
+            section.creation__information__intro
+              .creation__information__columns
+                .creation__information__text!=PrismicDOM.RichText.asHtml(item.primary.text)
+
+          if (item.slice_type === 'video')
+            .creation__video(style=`padding-top: ${item.primary.height / item.primary.width * 100}%;`)
+              video.creation__video__media(autoplay loop playsinline muted src=item.primary.mp4)
+
+        section.creation__information
+          .title.creation__information__aside
+            .creation__information__text!=PrismicDOM.RichText.asHtml(creation.data.creation)
+
+          .content.creation__information__aside!=PrismicDOM.RichText.asHtml(creation.data.creationtext)
+
+        section.creation__information
+          .title.creation__information__aside
+            .creation__information__text!=PrismicDOM.RichText.asHtml(creation.data.referencement)
+
+          .content.creation__information__aside!=PrismicDOM.RichText.asHtml(creation.data.reftext)
+
+        section.creation__information
+          .title.creation__information__aside
+            .creation__information__text!=PrismicDOM.RichText.asHtml(creation.data.maintenance)
+
+          .content.creation__information__aside!=PrismicDOM.RichText.asHtml(creation.data.maintext)
+
+    .essays__wrapper
+      .essays__about
+          .essays__about__description.essays__about__description--biography!=PrismicDOM.RichText.asHtml(about.data.description)
+
+          .essays__about__columns
+            .essays__about__columns__column
+              h2.essays__about__subtitle=about.data.contact_title
+
+              p.essays__about__description
+                each contact, index in about.data.contact_list
+                  span.essays__about__description__line
+                    a.essays__about__link(data-link href=contact.link.url)=contact.text
+
+            .essays__about__columns__column
+              h2.essays__about__subtitle=about.data.social_title
+
+              p.essays__about__description
+                each social, index in about.data.social_list
+                  span.essays__about__description__line
+                    a.essays__about__link(data-link href=social.link.url target="_blank")=social.text

@@ -51,7 +51,7 @@ export default class extends Group {
    * Animations.
    */
   show (pathname, scroll, onComplete) {
-    if (!pathname || pathname === 'about' || pathname === 'essays') {
+    if (!pathname || pathname === 'about' || pathname === 'essays' || pathname === 'creation') {
       const ease = Power4.easeOut
 
       this.isAnimating = true
@@ -72,7 +72,7 @@ export default class extends Group {
   }
 
   hide (pathname, onComplete) {
-    if (pathname === 'about' || pathname === 'essays') {
+    if (pathname === 'about' || pathname === 'essays' || pathname === 'creation') {
       return new Promise(resolve => {
         const ease = Power4.easeOut
 

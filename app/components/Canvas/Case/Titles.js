@@ -59,7 +59,7 @@ export default class extends Group {
   }
 
   hide (pathname, onComplete) {
-    if (pathname === 'about' || pathname === 'essays') {
+    if (pathname === 'about' || pathname === 'essays' || pathname === 'creation') {
       return new Promise(resolve => {
         const ease = Expo.easeOut
 

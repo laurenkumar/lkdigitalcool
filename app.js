@@ -116,6 +116,16 @@ app.get('/essays', (request, response) => {
   })
 })
 
+app.get('/creation', (request, response) => {
+  request.prismic.api.query('', { pageSize : 100 }).then(({ results }) => {
+    const about = find(results, { type: 'about' })
+    const creation = find(results, { type: 'creation' })
+
+    const standard = get(results, request)
+    response.render('pages/creation', { about, creation, ...standard })
+  })
+})
+
 app.get('/case/:id', (request, response) => {
   request.prismic.api.query('', { pageSize : 100 }).then(({ results }) => {
     const standard = get(results, request)
