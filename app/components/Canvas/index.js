@@ -125,7 +125,7 @@ export default class Canvas extends EventEmitter {
     this.renderer.initTexture(texture, 0)
 
     const isFirstProject = texture.uid === first(this.data).uid
-    const isNotVisible = this.slug !== 'about' && this.slug !== 'essays' && this.slug !== 'case' && this.slug !== 'creation'
+    const isNotVisible = this.slug !== 'about' && this.slug !== 'essays' && this.slug !== 'case' && this.slug !== 'creation' && this.slug !== 'article'
 
     if (isFirstProject && isNotVisible) {
       this.createPreloader(texture)
@@ -319,6 +319,13 @@ export default class Canvas extends EventEmitter {
 
     if (this.currentPage) {
       if (this.slug === 'cases') {
+        this.currentPage.onResize({
+          sizes: this.sizes,
+          titlesFills: this.titlesFills
+        })
+      }
+
+      if (this.slug === 'articles') {
         this.currentPage.onResize({
           sizes: this.sizes,
           titlesFills: this.titlesFills

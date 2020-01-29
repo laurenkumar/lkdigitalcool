@@ -21,6 +21,7 @@ import Navigation from 'components/Navigation'
 import Preloader from 'components/Preloader'
 
 import About from 'pages/About'
+import Article from 'pages/Article'
 import Creation from 'pages/Creation'
 import Case from 'pages/Case'
 import Essays from 'pages/Essays'
@@ -192,6 +193,7 @@ class App {
 
     this.pages.set('home', new Home())
     this.pages.set('about', new About())
+    this.pages.set('article', new Article())
     this.pages.set('creation', new Creation())
     this.pages.set('case', new Case())
     this.pages.set('essays', new Essays())

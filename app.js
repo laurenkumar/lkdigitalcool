@@ -35,6 +35,13 @@ const get = (results, request) => {
     return find(projectsList, { uid })
   })
 
+  const postsList = filter(results, { type: 'post' })
+  const { data: { list: postsOrder } } = find(results, { type: 'orderart' })
+
+  const posts = map(postsOrder, ({ project : { uid } }) => {
+    return find(postsList, { uid })
+  })
+
   return {
     analytics,
     functionals,
@@ -43,6 +50,7 @@ const get = (results, request) => {
     isTablet,
     meta,
     navigation,
+    posts,
     projects,
     sharing,
     social
@@ -107,12 +115,14 @@ app.get('/about', (request, response) => {
 
 app.get('/essays', (request, response) => {
   request.prismic.api.query('', { pageSize : 100 }).then(({ results }) => {
+    const standard = get(results, request)
+    const { posts } = standard    
     const about = find(results, { type: 'about' })
     const essays = find(results, { type: 'essays' })
 
-    const standard = get(results, request)
-
-    response.render('pages/essays', { about, essays, ...standard })
+    const post = find(posts, { uid: request.params.id })
+    const postIndex = posts.indexOf(post)
+    response.render('pages/essays', { about, post, postIndex, essays, ...standard })
   })
 })
 
@@ -138,6 +148,21 @@ app.get('/case/:id', (request, response) => {
     const related = projects[projectIndex + 1] ? projects[projectIndex + 1] : projects[0]
 
     response.render('pages/case', { ...standard, cases, project, projectIndex, related })
+  })
+})
+
+app.get('/article/:uid', (request, response) => {
+  request.prismic.api.query('', { pageSize : 100 }).then(({ results }) => {
+    const standard = get(results, request)
+    const { posts } = standard
+    const articles = find(results, { type: 'posts' })
+
+    const post = find(posts, { uid: request.params.uid })
+    console.log("post $$$$$$$$$$$$$$$$$$$$$$$$ ", JSON.stringify(post))
+    const postIndex = posts.indexOf(post)
+    const related = posts[postIndex + 1] ? posts[postIndex + 1] : posts[0]
+
+    response.render('pages/article', { ...standard, articles, post, postIndex, related })
   })
 })
 

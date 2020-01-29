@@ -93,6 +93,23 @@ export default class extends Group {
           resolve()
         })
       })
+    } else if (pathname === 'article') {
+      return new Promise(resolve => {
+        const ease = Expo.easeOut
+
+        this.timelineOut = new TimelineMax({
+          onComplete
+        })
+
+        this.timelineOut.to(this.position, 2, {
+          ease,
+          y: this.sizes.environment.height * 1.33
+        })
+
+        this.timelineOut.call(() => {
+          resolve()
+        })
+      })
     } else {
       onComplete()
 

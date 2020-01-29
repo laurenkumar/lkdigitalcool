@@ -19,7 +19,7 @@ block body
         ul.essays__list__wrapper
           each item, index in essays.data.list
             li.essays__list__item
-              a.essays__list__item__link(data-link href=item.link.url target="_blank")
+              a.essays__list__item__link(data-link href=`/article/${item.link.uid}` target="_blank")
                 span.essays__list__item__link__wrapper
                   span.essays__list__item__link__text!=item.text
 
