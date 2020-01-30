@@ -2,6 +2,7 @@
   "name": "lk-digital",
   "version": "1.0.0",
   "scripts": {
+    "heroku-postbuild": "npm install && npm start",
     "start": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\"",
     "backend:build": "node app.js",
     "backend:development": "nodemon app.js",
