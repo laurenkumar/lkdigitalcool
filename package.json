@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "heroku-postbuild": "npm install && npm start",
-    "start": "npm i\"npm run backend:development\" \"npm run frontend:development\"",
+    "start": "concurrently --kill-others \"npm run backend:development\" \"npm run frontend:development\"",
     "backend:build": "node app.js",
     "backend:development": "nodemon app.js",
     "frontend:build": "webpack -p --progress --config webpack.config.build.js",
