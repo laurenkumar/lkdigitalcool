@@ -21,6 +21,11 @@ block body
               span.about__description__line
                 a.about__link(href=contact.link.url)=contact.text
 
+          .about__subtitle!=PrismicDOM.RichText.asHtml(about.data.view_formation)
+          p.about__description
+            span.about__description__line
+              a.about__link(href="/formation")="C'est ici !"
+
           h2.about__subtitle=about.data.awards_title
 
           p.about__description

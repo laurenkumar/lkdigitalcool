@@ -41,6 +41,13 @@ module.exports = {
       }
     ]),
 
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery'",
+        "window.$": "jquery"
+    }),
+
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
@@ -94,7 +101,7 @@ module.exports = {
       },
 
       {
-        test: /\.(jpe?g|png|gif|svg|woff2?)$/,
+        test: /\.(jpe?g|png|gif|eot|woff|woff2|ttf|svg)(\?\S*)?$/,
         loader: 'file-loader',
         options: {
           name (file) {

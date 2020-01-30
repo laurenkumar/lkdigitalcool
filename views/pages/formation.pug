@@ -1,0 +1,291 @@
+extends ../base.pug
+
+include ../utils/mixins.pug
+
+block variables
+  - var slug = 'formation'
+
+block body
+  script(src="https://kit.fontawesome.com/94caa7c735.js")
+  div.desktop.formation
+    div.text__explicatif
+      h1="Formation Informatique sur Paris et Lyon"
+      h2="Vous voulez apprendre à créer un site internet avec Wordpress ou HTML/CSS ?"
+      p="L'équipe LK Digital, a décidé en 2020, de partager leurs connaissances dans la création de sites internet. C'est pourquoi nous vous accompagnons et vous enseignons les fondamentaux des langages HTML/CSS ainsi que la création de site sous le CMS Wordpress."
+      p="Nos formateurs, disponibles sur Paris et Lyon, travaillent pour des écoles supérieures ou organismes de formation."
+      p="Vous retrouverez sur cette page nos plans de cours, n'hésitez pas à cliquer un peu partout. ;)"
+      h3="Nos clients:"
+      a.essays__list__item__link(data-link href=`https://digital-college.fr` target="_blank")
+                span.essays__list__item__link__wrapper
+
+                  span.essays__list__item__link__text.essays__list__item__link__text--link
+                    span
+                      h4="Digital College"
+
+                    svg.essays__list__item__link__text__arrow(data-link-arrow viewBox="0 0 9.2 9.2" xmlns="http://www.w3.org/2000/svg")
+                      path(d="M8.7,2.3v6.3H2.3 M8.7,8.7L0.4,0.4")
+      a.essays__list__item__link(data-link href=`https://lecolefrancaise.fr/` target="_blank")
+                span.essays__list__item__link__wrapper
+
+                  span.essays__list__item__link__text.essays__list__item__link__text--link
+                    span
+                      h4="L'école française"
+
+                    svg.essays__list__item__link__text__arrow(data-link-arrow viewBox="0 0 9.2 9.2" xmlns="http://www.w3.org/2000/svg")
+                      path(d="M8.7,2.3v6.3H2.3 M8.7,8.7L0.4,0.4")
+      a.essays__list__item__link(data-link href=`https://www.twiceo.com/` target="_blank")
+                span.essays__list__item__link__wrapper
+
+                  span.essays__list__item__link__text.essays__list__item__link__text--link
+                    span
+                      h4="Twiceo"
+
+                    svg.essays__list__item__link__text__arrow(data-link-arrow viewBox="0 0 9.2 9.2" xmlns="http://www.w3.org/2000/svg")
+                      path(d="M8.7,2.3v6.3H2.3 M8.7,8.7L0.4,0.4")
+      a.essays__list__item__link(data-link href=`http://www.arcynerj.fr/` target="_blank")
+                span.essays__list__item__link__wrapper
+
+                  span.essays__list__item__link__text.essays__list__item__link__text--link
+                    span
+                      h4="Arcynerj"
+
+                    svg.essays__list__item__link__text__arrow(data-link-arrow viewBox="0 0 9.2 9.2" xmlns="http://www.w3.org/2000/svg")
+                      path(d="M8.7,2.3v6.3H2.3 M8.7,8.7L0.4,0.4")
+
+      h3="Vous désirez faire appel à nos services pour vos formations et vous retrouver ainsi sur cette belle liste ?"
+      a.essays__list__item__link(data-link href=`mailto:lauren_d@outlook.fr` target="_blank")
+                span.essays__list__item__link__wrapper
+
+                  span.essays__list__item__link__text.essays__list__item__link__text--link
+                    span
+                      h4="Contactez nous !"
+
+                    svg.essays__list__item__link__text__arrow(data-link-arrow viewBox="0 0 9.2 9.2" xmlns="http://www.w3.org/2000/svg")
+                      path(d="M8.7,2.3v6.3H2.3 M8.7,8.7L0.4,0.4")
+
+    div.start-menu
+      div.start-menu__list
+        div.media
+          a.user-info.menu-toggle(data-link  data-menu="user")
+            img.user-info__img.media__img(src="https://i.imgur.com/KkCqvK9.png" alt="User image")
+            div.user-info__name.media__body="User Name"
+              
+          div.menu(data-menu="user")
+            a(data-link )="Change account picture"
+            a(data-link )="Lock"
+            a(data-link )="Sign out"
+                  
+        div.menu(data-menu="power")
+          a(data-link )="Sleep"
+          a(data-link )="Power off"
+          a(data-link )="Restart"     
+
+        ul.start-menu__recent
+          li.start-menu__explorer
+            a(data-link  data-window="explorer")
+              i.far.fa-file-code(style="pointer-events:none")
+              | Formation HTML/CSS
+          li.start-menu__mail
+            a(data-link  data-window="mail")
+              i.fab.fa-wordpress-simple(style="pointer-events:none")
+              | Formation Wordpress
+          li.start-menu__notepad
+            a(data-link  data-window="notepad")
+              i.fas.fa-pencil-alt(style="pointer-events:none")
+              | Notepad
+
+        a.all-apps(data-link )="All apps"
+          i.fa.fa-arrow-right(style="pointer-events:none")
+
+        form.search
+          input.search__input(placeholder="Ask me anything" type="text")
+          button.search__btn
+
+      div.start-screen-scroll
+        div.start-screen
+          a.start-screen__tile.start-screen__tile--explorer.masonry-item( data-window="explorer")
+            i.far.fa-file-code(style="pointer-events:none")
+            | Formation HTML/CSS
+          a.start-screen__tile.masonry-item()
+          a.start-screen__tile.start-screen__tile--wide.masonry-item(  data-ss-colspan="2")
+          div.start-screen__smallgroup.masonry-item
+            a.start-screen__tile.start-screen__tile--small()
+              a.start-screen__tile.start-screen__tile--small()
+              a.start-screen__tile.start-screen__tile--small()
+          a.start-screen__tile.masonry-item()
+          a.start-screen__tile.masonry-item()
+          a.start-screen__tile.start-screen__tile--notepad.masonry-item()
+          a.start-screen__tile.start-screen__tile--large.start-screen__tile--mail.masonry-item( data-ss-colspan="2")
+            i.fab.fa-wordpress-simple(style="pointer-events:none")
+            | Formation Wordpress
+
+          a.start-screen__tile.masonry-item()
+          a.start-screen__tile.masonry-item()
+          a.start-screen__tile.masonry-item()
+
+    
+    div.taskbar
+      a.taskbar__item.taskbar__item--start(data-window="start" target="_self")
+        i.fab.fa-windows(style="pointer-events:none")
+      a.taskbar__item.taskbar__item--explorer( data-window="explorer" target="_self")
+        i.far.fa-file-code(style="pointer-events:none")
+      a.taskbar__item.taskbar__item--mail(data-window="mail" target="_self")
+        i.fab.fa-wordpress-simple(style="pointer-events:none")
+      a.taskbar__item.taskbar__item--notepad(data-window="notepad" target="_self")
+        i.fas.fa-pencil-alt(style="pointer-events:none")
+      
+      div.taskbar__tray
+        span.time
+          script
+    
+    div.window.window--explorer.window--minimized(data-window="explorer" style="width:670px;height:400px;top:10%;left:10%;")
+      div.window__titlebar
+        div.window__controls.window__controls--left
+          a.window__icon()
+            i.far.fa-file-code(style="pointer-events:none")
+
+        h2.window__title="Formation HTML/CSS"
+        
+        div.window__controls.window__controls--right
+          a.window__minimize()
+            i.fa.fa-minus(style="pointer-events:none")
+          a.window__maximize()
+            i.fa(style="pointer-events:none")
+          a.window__close()
+            i.fas.fa-times(style="pointer-events:none")
+      
+      div.window__body
+        div.window__main
+          div.folders
+            h3="Apprendre HTML/CSS"
+            h4="Objectifs de la formation"
+            ul
+              li="Maitriser les fondamentaux du langage HTML"
+              li="Créer ou modifier des pages HTML"
+              li="Découvrir les styles CSS"
+            h4="Programme de la formation"
+            button.accordion="Les bases du HTML"
+            div.panel
+              ul
+                li="Choisir son éditeur de code"
+                li="Les balises et leurs attributs"
+                li="Les navigateurs, les régles importantes à respecter"
+            button.accordion="Créer une page HTML"
+            div.panel
+              ul
+                li="Page, en-tête, titre, commentaires, langue"
+                li="Police, taille, gras, italique, caractères spéciaux"
+                li="Paragraphe, alignement, retrait, listes à puces, bloc de citation"
+            button.accordion="Insérer des medias dans une page"
+            div.panel
+              ul
+                li="Images : gif, jpg, png"
+                li="Taille, positionnement, texte alternatif"
+                li="Son, vidéo, animation"
+            button.accordion="Définir la navigation et les lien hypertextes"
+            div.panel
+              ul
+                li="Lien vers une ancre, une page du site, une url externe, vers une messagerie"
+                li="Lien sur une image"
+            button.accordion="Créer l’interactivité avec les formulaire"
+            div.panel
+              ul
+                li="Les types de champs"
+                li="Envoyer les informations par mail"
+                li="Structurer la mise en page"
+            button.accordion="Gérer la forme avec les feuilles de style CSS"
+            div.panel
+              ul
+                li="Les classes et la définition des styles"
+                li="Les principales propriétés CSS"
+                li="Combiner les sélecteurs et créer des sélecteurs simples"
+                li="Les propiétés indispensables"
+            button.accordion="Optimiser les feuilles de style"
+            div.panel
+              ul
+                li="La feuille de style externe"
+                li="Lier le fichier de styles et les pages HTML"
+            h4="Pour qui ?"
+            p="Personne souhaitant créer ou mettre à jour des pages Web"
+            h4="Prérequis ?"
+            p="Aucun, tout débutant peut y arriver !"
+      
+    div.window.window--mail(data-window="mail" style="display:none;width:670px;height:400px;top:15%;left:30%;")
+      div.window__titlebar
+        div.window__controls.window__controls--left
+          a.window__icon()
+            i.fab.fa-wordpress-simple(style="pointer-events:none")   
+        
+        h2.window__title="Formation Wordpress"
+          
+        div.window__controls.window__controls--right
+          a.window__minimize()
+            i.fa.fa-minus(style="pointer-events:none")
+          a.window__maximize()
+            i.fa(style="pointer-events:none")
+          a.window__close()
+            i.fas.fa-times(style="pointer-events:none")
+        
+      div.window__body
+        div.window__main
+          div.folders
+            h3="Apprendre Wordpress"
+            h4="Objectifs de la formation"
+            ul
+              li="Mettre en ligne un site internet avec le CMS WordPress"
+              li="Gérer un site et effectuer des mises à jour via l’interface d’administration (BackOffice)"
+            h4="Programme de la formation"
+            button.accordion="Installer Wordpress"
+            div.panel
+              ul
+                li="Savoir la différence entre wordpress.org et wordpress.com"
+                li="Télécharger, installer et configuer wordpress via LocalByFlyWheel"
+            button.accordion="Administration : intervenir en BackOffice / FrontOffice"
+            div.panel
+              ul
+                li="Thèmes"
+                li="Widgets"
+                li="Menus"
+                li="Création de pages, articles, catégories, classification"
+                li="Utilisateurs et rôles"
+            button.accordion="Insérer des medias dans une page"
+            div.panel
+              ul
+                li="Images : gif, jpg, png"
+                li="Taille, positionnement, texte alternatif"
+                li="Son, vidéo, animation"
+            button.accordion="Configuration : Installation de nouveaux plugins"
+            div.panel
+              ul
+                li="Interactivité : Animation / Slider / Lightbox"
+                li="Informations : Formulaire de contact / GoogleMap"
+                li="Partage : Réseaux sociaux / Newsletter"
+                li="Référencement"
+                li="Sécurité"
+                li="Type de contenu et champs personnalisés"
+                li="Migration du site"
+
+            h4="Pour qui ?"
+            p="Personne souhaitant créer ou mettre à jour des pages Web via Wordpress"
+            h4="Prérequis ?"
+            p="Aucun, tout débutant peut y arriver !"
+          
+    div.window.window--notepad(data-window="notepad" style="display:none;width:600px;height:300px;top:10%;left:30%;")
+      div.window__titlebar
+        div.window__controls.window__controls--left
+          a.window__icon()
+            i.fas.fa-pencil-alt(style="pointer-events:none")
+
+        span.window__title="Notepad"
+        
+        div.window__controls.window__controls--right
+          a.window__minimize()
+            i.fa.fa-minus(style="pointer-events:none")
+          a.window__maximize()
+            i.fa(style="pointer-events:none")
+          a.window__close()
+            i.fas.fa-times(style="pointer-events:none")
+        
+      div.window__body
+        div.window__main
+          textarea.full-textarea

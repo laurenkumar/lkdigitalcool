@@ -11,12 +11,19 @@
     "test": "node -c *.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "body-parser": "~1.18.2",
     "cross-env": "^5.2.0",
     "debug": "~3.1.0",
     "dotenv": "^8.2.0",
     "errorhandler": "~1.5.0",
     "express": "~4.16.1",
+    "jquery": "^3.4.1",
+    "jquery-bridget": "^2.0.1",
+    "jquery-ui": "^1.12.1",
+    "jsdom": "^16.0.1",
+    "masonry-layout": "^4.2.2",
     "method-override": "~2.3.10",
     "moment": "^2.24.0",
     "morgan": "~1.9.0",
@@ -25,7 +32,8 @@
     "prismic-javascript": "~1.4.0",
     "pug": "~2.0.0-rc.2",
     "request": "~2.83.0",
-    "ua-parser-js": "^0.7.20"
+    "ua-parser-js": "^0.7.20",
+    "webpack-jquery-ui": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

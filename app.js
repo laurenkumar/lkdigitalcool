@@ -113,7 +113,7 @@ app.get('/about', (request, response) => {
   })
 })
 
-app.get('/essays', (request, response) => {
+app.get('/blog', (request, response) => {
   request.prismic.api.query('', { pageSize : 100 }).then(({ results }) => {
     const standard = get(results, request)
     const { posts } = standard    
@@ -123,6 +123,19 @@ app.get('/essays', (request, response) => {
     const post = find(posts, { uid: request.params.id })
     const postIndex = posts.indexOf(post)
     response.render('pages/essays', { about, post, postIndex, essays, ...standard })
+  })
+})
+
+app.get('/formation', (request, response) => {
+  request.prismic.api.query('', { pageSize : 100 }).then(({ results }) => {
+    const standard = get(results, request)
+    const { posts } = standard    
+    const about = find(results, { type: 'about' })
+    const essays = find(results, { type: 'essays' })
+
+    const post = find(posts, { uid: request.params.id })
+    const postIndex = posts.indexOf(post)
+    response.render('pages/formation', { about, post, postIndex, essays, ...standard })
   })
 })
 
@@ -158,7 +171,6 @@ app.get('/article/:uid', (request, response) => {
     const articles = find(results, { type: 'posts' })
 
     const post = find(posts, { uid: request.params.uid })
-    console.log("post $$$$$$$$$$$$$$$$$$$$$$$$ ", JSON.stringify(post))
     const postIndex = posts.indexOf(post)
     const related = posts[postIndex + 1] ? posts[postIndex + 1] : posts[0]
 
