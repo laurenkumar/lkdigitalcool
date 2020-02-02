@@ -1,10 +1,4 @@
-# Bruno Arizio
-
-[![JS Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
-
-[![Screenshot of Website](bruno-arizio.png)](https://brunoarizio.com/)
-
-This is the repository of [Bruno Arizio](http://brunoarizio.com/) portfolio. We decided to be transparent and take a step forward in making this entire project open source so people can learn how to make the things we created. The website was awarded at [Awwwards](https://www.awwwards.com/) with Site of The Day and Developer Award in [November 25, 2019](https://www.awwwards.com/sites/bruno-arizio-portfolio).
+# LK Digital
 
 ## Overview
 
@@ -37,7 +31,6 @@ After creating your `.env` file and setting up your Prismic account, you're able
 
 ```sh
 # Clone the project.
-git clone https://github.com/lhbzr/bruno-arizio.git
 
 # Install npm depedencies.
 npm install
@@ -49,9 +42,3 @@ npm start
 # Prismic
 
 I think this might be the trickiest part of running this project locally, you need to understand how Prismic works, then create your fields there and then finally populate the content. To make your life easier, I'm providing all JSON structures inside the `prismic` folder of this repository. Don't forget to match the names used in the JSON files with the ID of your Custom Type of Prismic.
-
-You'll also notice a `images` folder inside the `prismic` folder. By the time I've developed this portfolio, I wasn't aware of `three-bmfont-text` approach. You can see how it works in [this very nice article by Mario Carrillo available at Codrops](https://tympanus.net/codrops/2019/10/10/create-text-in-three-js-with-three-bmfont-text/). So I have used Canvas API to generate these images and then I was loading them as textures for the text of the website. (😂) So, when creating your project in Prismic, you'll have two fields for these images `Fill` and `Stroke`, you just need to include the respective ones from this folder.
-
-# Credits
-
-That's all folks! I hope this repository might be useful for your learnings. When I was starting my career, I've learned a lot from [Bruno Imbrizi](https://github.com/brunoimbrizi/), [Giulian Drimba](https://github.com/giuliandrimba) and [Silvio Paganini](https://github.com/silviopaganini) public repositories, among many others public repositories made by incredible people. So I'm doing it too as a way to contribute with the growth of the community as well.
