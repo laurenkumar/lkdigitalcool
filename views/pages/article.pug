@@ -30,8 +30,8 @@ block body
               span.case__information__text!=`Chapitre ${index+1}`
               h3.case__information__text!=`${item.titre_chapitre[0].text}&nbsp;`
               div.article__table__link
-                a.case__link(href=`#chapitre${index+1}` data-scroll)
-                  span.case__link__text=`Lire le chapitre`
+                a.case__link(href=`#chapitre${index+1}` data-scroll data-link)
+                  span.case__link__text(style="pointer-events:none")=`Lire le chapitre`
 
         each item, index in post.data.body
           if (item.slice_type === 'image')

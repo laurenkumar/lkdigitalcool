@@ -54,12 +54,6 @@ export default class extends Page {
   createAnimations () {
     this.animations = {}
 
-    const id = 'chapitre6';
-    const yourElement = document.getElementById(id);
-    const y = yourElement.getBoundingClientRect().top + window.pageYOffset;
-
-    window.scrollTo({top: y, behavior: 'smooth'});
-
     each([
       ...this.elements.informationTexts,
       this.elements.informationDescription

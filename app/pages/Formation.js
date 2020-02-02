@@ -36,7 +36,6 @@ export default class extends Page {
       });
     }
     $(window).ready(() => {
-      console.log("totototototootot")
       const $container = $(".start-screen");
 
       $container.masonry({
