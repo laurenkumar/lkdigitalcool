@@ -173,7 +173,6 @@ app.get('/article/:uid', (request, response) => {
     const post = find(posts, { uid: request.params.uid })
     const postIndex = posts.indexOf(post)
     const related = posts[postIndex + 1] ? posts[postIndex + 1] : posts[0]
-
     response.render('pages/article', { ...standard, articles, post, postIndex, related })
   })
 })

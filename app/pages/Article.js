@@ -54,6 +54,11 @@ export default class extends Page {
   createAnimations () {
     this.animations = {}
 
+    const myLink = document.querySelectorAll('a[href]')
+    myLink.addEventListener('click', function(e) {
+      e.preventDefault()
+    })
+
     each([
       ...this.elements.informationTexts,
       this.elements.informationDescription

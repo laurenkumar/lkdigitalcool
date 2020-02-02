@@ -48,7 +48,7 @@ block body
               video.case__video__media(autoplay loop playsinline muted src=item.primary.mp4)
 
           if (item.slice_type === 'id_chapitre')
-            div(id!=PrismicDOM.RichText.asText(item.primary.text))
+            div(class!=`${item.primary.text}`)
             
           if (item.slice_type === 'text')
             section.case__information__intro

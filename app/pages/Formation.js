@@ -149,7 +149,6 @@ export default class extends Page {
         },
         start({pageX}, ui) {
           const mouseX = `${pageX}px`;
-          console.log(mouseX);
 
           $(".window").removeClass("window--active");
 
