@@ -54,10 +54,11 @@ export default class extends Page {
   createAnimations () {
     this.animations = {}
 
-    const myLink = document.querySelectorAll('a[href]')
-    myLink.addEventListener('click', function(e) {
-      e.preventDefault()
-    })
+    const id = 'chapitre6';
+    const yourElement = document.getElementById(id);
+    const y = yourElement.getBoundingClientRect().top + window.pageYOffset;
+
+    window.scrollTo({top: y, behavior: 'smooth'});
 
     each([
       ...this.elements.informationTexts,

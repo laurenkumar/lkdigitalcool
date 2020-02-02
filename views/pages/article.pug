@@ -30,7 +30,7 @@ block body
               span.case__information__text!=`Chapitre ${index+1}`
               h3.case__information__text!=`${item.titre_chapitre[0].text}&nbsp;`
               div.article__table__link
-                a.case__link(href=`#chapitre${index+1}`)
+                a.case__link(href=`#chapitre${index+1}` data-scroll)
                   span.case__link__text=`Lire le chapitre`
 
         each item, index in post.data.body
@@ -48,7 +48,7 @@ block body
               video.case__video__media(autoplay loop playsinline muted src=item.primary.mp4)
 
           if (item.slice_type === 'id_chapitre')
-            div(class!=`${item.primary.text}`)
+            div(id!=`${item.primary.text}`)
             
           if (item.slice_type === 'text')
             section.case__information__intro
