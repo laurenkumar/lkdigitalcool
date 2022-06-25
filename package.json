@@ -23,7 +23,7 @@
     "jquery": "^3.4.1",
     "jquery-bridget": "^2.0.1",
     "jquery-ui": "^1.12.1",
-    "jsdom": "^16.0.1",
+    "jsdom": "^16.5.0",
     "masonry-layout": "^4.2.2",
     "method-override": "~2.3.10",
     "moment": "^2.29.2",
