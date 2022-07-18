@@ -22,7 +22,7 @@
     "express": "~4.16.1",
     "jquery": "^3.4.1",
     "jquery-bridget": "^2.0.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.2",
     "jsdom": "^16.0.1",
     "masonry-layout": "^4.2.2",
     "method-override": "~2.3.10",
