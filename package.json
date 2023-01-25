@@ -34,7 +34,7 @@
     "pug": "~2.0.0-rc.2",
     "request": "~2.83.0",
     "smooth-scroll": "^16.1.2",
-    "ua-parser-js": "^0.7.20",
+    "ua-parser-js": "^0.7.33",
     "webpack-jquery-ui": "^2.0.1"
   },
   "devDependencies": {
